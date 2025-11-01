@@ -1,0 +1,4 @@
+Assets/Sherpa.mp4 filter=lfs diff=lfs merge=lfs -text
+Assets/Sherpa_selected.mp4 filter=lfs diff=lfs merge=lfs -text
+.Assets/DataStoryRecording.mov filter=lfs diff=lfs merge=lfs -text
+Assets/DataStoryRecording.mov filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Telugu:wght@100..900&family=Sirivennela&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./artJournal.css">
+    <title>Art Gallery</title>
+
+</head>
+<body>
+    <div id="banner"></div>
+    <nav>
+        <p><a href="./index.html" id="logo">మనోజ్ఞ | Manogna</a></p>
+    </nav>
+    <div class="gallery-container">
+        <p class="gallery-subtitle">My love for visual storytelling has its roots in my art practice. In my free time, I often lose myself in watercolor painting, a process that feels both meditative and deeply personal. The works shown here are inspired by the <i>Sundarakanda</i> of the <i>Ramayana</i>, an Indian epic that honors the victory of good over evil.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" id="one" onclick="openLightbox(this)">
+                <img src="./Assets/Hanuma.png" alt="Artwork 1" class="gallery-item-image">
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="./Assets/Hanuma-flying.jpg" alt="Artwork 2" class="gallery-item-image">
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="./Assets/Hanuma.jpg"  alt="Artwork 3" class="gallery-item-image">
+                <!-- <div class="gallery-item-content">
+                    <h3 class="gallery-item-title">Urban Symphony</h3>
+                    <p class="gallery-item-description">Bold statements for photoshoots</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Enlarged view" class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer id="contact">
+        <h3>Let's connect</h3>
+        <p>Thank you for visiting my website! Feel free to leave a message if you liked what you saw!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:manogna.maddipatla@gmail.com">manogna.maddipatla@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span><i class="fa fa-linkedin"></i></span>
+                <a href="https://linkedin.com/in/manogna-maddipatla/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span><img src="./Assets/github-logo.png" class="github"/></span>
+                <a href="https://github.com/manojna18" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.7;">© 2025 Manogna Maddipatla. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('.gallery-item-image');
+            if (img) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

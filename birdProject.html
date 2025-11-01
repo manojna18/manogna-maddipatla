@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Case Study</title>
+    <link rel="stylesheet" href="projectStyles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">← Back to Portfolio</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#tech">Technology</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <div class="project-header">
+        <h1>Bird population trends in North America</h1>
+        <p>A data-driven look at bird population declines across North America</p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <span>📅</span>
+                <span>May 2025</span>
+            </div>
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>3 weeks</span>
+            </div>
+            <div class="meta-item">
+                <span>👩🏻‍💻</span>
+                <span>Solo Project</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="blog-container">
+        <!-- Overview Section -->
+        <section id="overview" class="blog-section">
+            <h2>Project Overview</h2>
+            <p>
+                This project began with a simple thought after a trip to Hawaii, most of which I spent hoping to spot at least one nēnē bird. I couldn’t help wondering: if so many Hawaiian birds are disappearing, what about the rest of North America?
+            <p>I started by searching for bird population data across the Hawaiian Islands. When I realized how limited and scattered this information was, I expanded my search to the entire continent. That led me to credible sources like the U.S. North American Bird Conservation Initiative (NABCI) and the National Audubon Society. Data from NABCI’s 2025 State of the Birds report and U.S. Geological Survey’s bird population trend data became the foundation for this story.</p>
+
+            <p>As someone who enjoys photographing birds on my phone, learning that nearly 75% of North American bird species are in decline was shocking. All change begins with awareness, and this data story is my small attempt to shed light on a crisis that is too easy to overlook.</p>
+            
+
+            <video class="full-width-screenshot" autoplay muted><source src="./Assets/DataStoryRecording.mov" type="video/mp4"></video>
+
+            <div class="project-links">
+                <a href="https://github.com/manojna18/bird-population-trends" class="project-link secondary">View on GitHub</a>
+            </div>
+
+            <h2>Key Features</h2>
+            <p></p>
+            <ul>
+                <li><strong>Interactive visualization:</strong> I wanted the data to feel alive, not just numbers on a page. Interactive graphics in the story let users explore how different bird populations are changing over time.</li>
+                <li><strong>Illustrations:</strong> One of the most fun parts of the project was painting the birds themselves. From the Maui parrotbill to the bluejay and Canadian goose, each illustration was a way to connect with the species and share their beauty with viewers.</li>
+                <li><strong>Scroll-driven experience:</strong> I wanted this to feel like a journey rather than a static page. As users scroll, different sections update with new visuals and insights.</li>
+            </ul>
+
+            <div class="screenshot-grid">
+                <div class="screenshot">
+                    <img src="./Assets/bird-data (1).png" alt="Feature 1">
+                    <div class="screenshot-caption">Interactive data graphics</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./Assets/Birds-background.png" alt="Feature 2">
+                    <div class="screenshot-caption">Hand painted illustrations</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./Assets/graph.png" alt="Feature 3">
+                    <div class="screenshot-caption">Scrollytelling features</div>
+                </div>
+            </div>
+            <h2>Development Process</h2>
+            
+            <h3>Planning</h3>
+            <p>
+                I started by creating a loose content flow that outlined how users would move through the story: from the visual introduction to individual bird profiles and their population data. While I didn’t need complex user flows, I mapped out interaction points where hover-based tooltips would reveal facts about each bird.
+            </p>
+            <p>Before diving into design, I created simple wireframes to map how the story would unfold visually. I sketched how the user might scroll through sections, with the artwork and the data alternating in focus. To create an immersive experience, I experimented with scrollytelling interactions (using D3.js and Scrollama) to reveal new insights progressively.
+            <p>The user flow centered on a linear narrative, where each scroll interaction introduces new data points to the user, rather than overwhelming them with data.</p>
+            <p>My design choices for the story include:</p>
+            <ul>
+                <li>Full-width illustrated headers paired with short data highlights</li>
+                <li>Muted natural color palettes (soft blues, greens, ochres) inspired by watercolor field journals and bird guides</li>
+                <li>Subtle typography to keep the data visualizations as the focal point</li>
+            </ul>
+
+            <h3>Challenges</h3>
+            
+            <div class="highlight-box">
+                <h4>Challenge #1: Finding the right data</h4>
+                <p><strong>Problem:</strong> One of the first challenges I faced was working with complex bird survey data. The initial datasets I found were detailed but difficult to use as they included multiple tables, metadata, and scientific codes rather than clear population numbers.</p>
+                <p><strong>Solution:</strong>Eventually, I found a more accessible dataset from the U.S. Geological Survey that summarized long-term bird population trends across the U.S.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Challenge #2: Cleaning the data</h4>
+                <p><strong>Problem:</strong> The initial raw data file contained a lot of information I didn’t need, like species codes, confidence intervals, and scientific names.</p>
+                <p><strong>Solution:</strong> I manually cleaned and simplified the data in Excel, keeping only the columns that were relevant to my story: bird group, year range, and percent change in population. his cleaned version gave me a clear, high-level view of how different bird groups had changed since 1970. I then converted it to JSON format so I could use it with D3.js to build my interactive visualizations.</p>
+            </div>
+
+            <h3>Implementation</h3>
+            <p>
+                I used D3.js to build custom, data-driven visualizations that could change dynamically as users scrolled through the story. To keep the interaction lightweight, I cleaned the dataset in Excel, exported it to JSON, and structured it so each record represented a bird group and its yearly percentage change in population. This made it easy for D3 to read and render the data directly in the browser.
+                For the scrolling interactions, I used Scrollama.js to trigger animations and highlight different trends as users move through the page. The combination of D3 and Scrollama allowed me to connect data, motion, and narrative in one seamless flow, creating an experience that feels both interactive and informative.
+            </p>
+            <h2>Technology Stack</h2>
+            <p>Here are the tools and technologies that powered this project:</p>
+            
+            <h3>Frontend</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Svelte</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">Vite</span>
+            </div>
+
+            <h3>Tools & Services</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Adobe Illustrator</span>
+                <span class="tech-tag">Microsoft Excel</span>
+                <span class="tech-tag">Flourish</span>
+            </div>
+
+            <h3>Future improvements</h3>
+            <p>I’m currently working to make the project fully mobile responsive. The scrollytelling layout and D3.js visualizations perform well on desktop, but smaller screens require adjustments to scaling, text size, and scroll behavior to keep the experience smooth and readable. In the future, I’d also like to optimize performance by simplifying transitions and reducing file size for faster loading.</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>Let's connect</h3>
+        <p>Thank you for visiting my website! Feel free to leave a message if you liked what you saw!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:manogna.maddipatla@gmail.com">manogna.maddipatla@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span><i class="fa fa-linkedin"></i></span>
+                <a href="https://linkedin.com/in/manogna-maddipatla/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span><img src="./Assets/github-logo.png" class="github"/></span>
+                <a href="https://github.com/manojna18" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.7;">© 2025 Manogna Maddipatla. All rights reserved.</p>
+    </footer>
+</body>
+</html>
